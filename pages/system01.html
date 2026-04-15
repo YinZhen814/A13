@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="節能減碳之即期食品動態 AI 定價系統專題網站" />
+    <title>碳即</title>
+    <link rel="icon" type="image/png" href="../assets/image/logo-removebg-preview.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" />
+    <link href="../assets/css/style.css" rel="stylesheet" />
+
+
+    <style>
+      .interactive-card {
+        transition: all 0.4s ease;
+        cursor: pointer;
+      }
+      
+      .interactive-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+      }
+      
+      .interactive-img {
+        position: relative;
+        overflow: hidden;
+        border-radius: 12px;
+      }
+      
+      .interactive-img img {
+        transition: transform 0.5s ease;
+      }
+      
+      .interactive-card:hover .interactive-img img {
+        transform: scale(1.1);
+      }
+      
+      .overlay-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      
+      .interactive-card:hover .overlay-text {
+        opacity: 1;
+      }
+      
+      
+      .collapse:not(.show) + button .collapse-text {
+        display: none;
+      }
+      
+      .collapse.show + button .expand-text {
+        display: none;
+      }
+      
+      .collapse.show + button .collapse-text {
+        display: inline;
+      }
+      
+      .collapse.show + button i {
+        transform: rotate(180deg);
+      }
+
+      .feature-card {
+        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        cursor: pointer;
+        border-radius: 16px !important;
+        user-select: none;
+      }
+      
+      .feature-card:hover {
+        transform: translateY(-15px) scale(1.02);
+        box-shadow: 0 30px 60px rgba(0,0,0,0.25) !important;
+      }
+      
+      .feature-card .card-header {
+        border-radius: 16px 16px 0 0 !important;
+        min-height: 140px;
+      }
+      
+      .bg-gradient-success {
+        background: linear-gradient(135deg, #4a8056, #7fb1a2);
+      }
+      
+      .bg-gradient-primary {
+        background: linear-gradient(135deg, #6391c3, #7a53ba);
+      }
+      
+      .bg-gradient-warning {
+        background: linear-gradient(135deg, #ccc467, #fbbb87);
+      } 
+      
+      .bg-gradient-info {
+        background: linear-gradient(135deg, #aa40a4, #bb6ac2);
+      }
+      
+      .feature-icon {
+        animation: float 3s ease-in-out infinite;
+      }
+      
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+      
+      
+      .card-footer small i {
+        transition: transform 0.3s ease;
+      }
+      
+      .feature-card[aria-expanded="true"] .card-footer small i {
+        transform: rotate(180deg);
+      }
+
+      
+      .flip-card {
+        background-color: transparent;
+        perspective: 1000px;
+        height: 320px; 
+      }
+      
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transform-style: preserve-3d;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        border-radius: 16px;
+        cursor: pointer;
+      }
+      
+      .flip-card.flipped .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+      
+      .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+      }
+      
+      .flip-card-front {
+        color: white;
+      }
+      
+      .flip-card-back {
+        background-color: #fff;
+        color: #333;
+        transform: rotateY(180deg);
+        border: 1px solid rgba(0,0,0,0.05);
+      }
+    </style>
+    
+</head>
+<body id="page-top">
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+        <!-- Logo 點擊回首頁 -->
+        <a class="navbar-brand d-flex align-items-center" href="../index.html">
+            <img src="../assets/image/logo2.png" alt="A13 Logo" class="navbar-logo me-2">
+        </a>
+        <!-- 漢堡選單按鈕 -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
+            Menu <i class="fas fa-bars ms-1"></i>
+        </button> 
+        <!-- 系統介紹下拉選單 -->
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle"
+                       href="#"
+                       id="systemDropdown"
+                       role="button"
+                       data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        系統介紹
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="systemDropdown">
+                        <li><a class="dropdown-item" href="system01.html">系統介面</a></li>
+                        <li><a class="dropdown-item" href="system02.html">核心技術</a></li>
+                        <li><a class="dropdown-item" href="system03.html">系統應用階段</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    
+<section class="page-section system-hero pt-5 mt-5">
+  <div class="container">
+
+    
+    <div class="text-center mb-5 system-title">
+      <h1 class="mb-2">系統介面</h1>
+      <div class="text-muted">User Interface</div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="d-flex justify-content-center gap-2 mb-4 flex-wrap system-tabs">
+      <a class="btn btn-success btn-sm" href="system01.html">系統介面</a>
+      <a class="btn btn-outline-success btn-sm" href="system02.html">核心技術</a>
+      <a class="btn btn-outline-success btn-sm" href="system03.html">系統應用階段</a>
+    </div>
+
+    <!-- 3-step cards -->
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="card system-card h-100 shadow-sm position-relative overflow-hidden interactive-card">
+          <div class="card-body text-center">
+            <div class="step-pill mb-3">Step 1</div>
+            <h5 class="card-title mb-1">掃描商品</h5>
+            <div class="text-muted small mb-3">Scan Product</div>
+            <div class="img-frame">
+              <img src="../assets/image/ui_scan.png" alt="掃描商品畫面">
+            </div>
+            <p class="text-muted small mb-0">
+              掃描商品包裝上的名稱與有效期限。
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card system-card h-100 shadow-sm position-relative overflow-hidden interactive-card">
+          <div class="card-body text-center">
+            <div class="step-pill mb-3">Step 2</div>
+            <h5 class="card-title mb-1">價格判斷</h5>
+            <div class="text-muted small mb-3">Price Judgment</div>
+            <div class="img-frame">
+              <img src="../assets/image/ui_result.png" alt="價格判斷結果畫面">
+            </div>
+            <p class="text-muted small mb-0">
+              顯示是否划算（is_reasonable）與理由摘要。
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card system-card h-100 shadow-sm position-relative overflow-hidden interactive-card">
+          <div class="card-body text-center">
+            <div class="step-pill mb-3">Step 3</div>
+            <h5 class="card-title mb-1">推薦替代品</h5>
+            <div class="text-muted small mb-4">Cheaper & Better Choices</div>
+      
+            <!-- 圖片加上 hover 放大效果 -->
+            <div class="img-frame mb-4">
+              <img src="../assets/image/ui_recommend.png" alt="推薦同類商品畫面" class="img-fluid rounded shadow-sm">
+              <div class="overlay-text">
+                <i class="fas fa-search-plus fa-2x text-white"></i>
+              </div>
+            </div>
+      
+            <!-- 主要描述 + 點擊展開 -->
+            <p class="text-muted small mb-3">
+              <strong class="text-success">提供更便宜</strong>或<strong class="text-success">更適合</strong>的同類商品，<br>幫助您快速做出聰明決策
+            </p>
+      
+            <!-- 點擊展開的互動區 -->
+            <div class="collapse" id="recommendCollapse">
+              <div class="mt-3 p-3 bg-light rounded">
+                <p class="small mb-2">
+                  <i class="fas fa-check text-success me-2"></i>
+                  根據效期與價格，推薦高性價比替代品
+                </p>
+                <p class="small mb-2">
+                  <i class="fas fa-check text-success me-2"></i>
+                  促進即期食品流通，減少浪費
+                </p>
+                <p class="small mb-0">
+                  <i class="fas fa-check text-success me-2"></i>
+                  讓省錢與環保一次達成！
+                </p>
+              </div>
+            </div>
+      
+            <!-- 展開按鈕 -->
+            <button 
+              class="btn btn-outline-success btn-sm mt-3"
+              type="button" 
+              data-bs-toggle="collapse" 
+              data-bs-target="#recommendCollapse"
+              aria-expanded="false" 
+              aria-controls="recommendCollapse">
+              <span class="expand-text">了解更多</span>
+              <span class="collapse-text" style="display:none;">收起說明</span>
+              <i class="fas fa-chevron-down ms-2"></i>
+            </button>
+          </div>
+      
+          
+          <div class="position-absolute bottom-0 end-0 p-3">
+            <i class="fas fa-thumbs-up fa-2x text-success opacity-25"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 系統功能簡介 -->
+<div class="row mt-5">
+  <div class="col-12">
+    <h2 class="section-subheading text-center text-muted mb-5">系統功能簡介</h2>
+    <p class="text-muted text-center lead mb-5">
+      根據專案報告，本系統結合影像辨識與 AI 技術，提供即時效期辨識與動態定價分析，為消費者提供合理價格建議，提升購物效率與決策便利性。<br>
+      同時，系統呼應聯合國永續發展目標（SDG 12），以即期食品為主題，透過科技輔助減少食品浪費。
+    </p>
+  </div>
+
+  <!-- Feature 1: 智能掃描與商品辨識 -->
+  <div class="col-lg-6 mb-4">
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-card-inner">
+        <!-- Front -->
+        <div class="flip-card-front bg-gradient-success">
+          <i class="fas fa-camera-retro fa-3x mb-3 feature-icon"></i>
+          <h5 class="mb-0">智能掃描與商品辨識</h5>
+          <small class="mt-4 text-white-50"><i class="fas fa-hand-pointer me-1"></i> 點擊查看詳情</small>
+        </div>
+        <!-- Back -->
+        <div class="flip-card-back">
+          <h5 class="text-success mb-3">智能掃描與商品辨識</h5>
+          <p class="text-muted small">
+            系統透過先進的影像辨識技術，讓消費者能快速掃描商品包裝上的名稱及有效期限。這不僅簡化了資訊輸入流程，更是實現後續 AI 價值評估的基礎。
+          </p>
+          <small class="text-muted mt-2"><i class="fas fa-undo me-1"></i> 點擊返回</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feature 2: AI 即期品價值評估 -->
+  <div class="col-lg-6 mb-4">
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-card-inner">
+        <div class="flip-card-front bg-gradient-primary">
+          <i class="fas fa-brain fa-3x mb-3 feature-icon"></i>
+          <h5 class="mb-0">AI 即期品價值評估</h5>
+          <small class="mt-4 text-white-50"><i class="fas fa-hand-pointer me-1"></i> 點擊查看詳情</small>
+        </div>
+        <div class="flip-card-back">
+          <h5 class="text-primary mb-3">AI 即期品價值評估</h5>
+          <p class="text-muted small">
+            根據食品剩餘期限、類別及市場供需，透過 AI 計算「建議合理價格」或「划算程度評估」，幫助消費者判斷即期品價值。
+          </p>
+          <small class="text-muted mt-2"><i class="fas fa-undo me-1"></i> 點擊返回</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feature 3: 智能惜食商品推薦 -->
+  <div class="col-lg-6 mb-4">
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-card-inner">
+        <div class="flip-card-front bg-gradient-warning">
+          <i class="fas fa-gift fa-3x mb-3 feature-icon"></i>
+          <h5 class="mb-0">智能惜食商品推薦</h5>
+          <small class="mt-4 text-white-50"><i class="fas fa-hand-pointer me-1"></i> 點擊查看詳情</small>
+        </div>
+        <div class="flip-card-back">
+          <h5 class="text-warning mb-3">智能惜食商品推薦</h5>
+          <p class="text-muted small">
+            智慧推薦效期快到的相似商品或更優惠的同性質商品，幫助消費者發現高性價比選項，促進即期商品流通。
+          </p>
+          <small class="text-muted mt-2"><i class="fas fa-undo me-1"></i> 點擊返回</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feature 4: 會員個人化管理與推薦 -->
+  <div class="col-lg-6 mb-4">
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-card-inner">
+        <div class="flip-card-front bg-gradient-info">
+          <i class="fas fa-user-friends fa-3x mb-3 feature-icon"></i>
+          <h5 class="mb-0">會員個人化管理與推薦</h5>
+          <small class="mt-4 text-white-50"><i class="fas fa-hand-pointer me-1"></i> 點擊查看詳情</small>
+        </div>
+        <div class="flip-card-back">
+          <h5 class="text-info mb-3">會員個人化管理與推薦</h5>
+          <p class="text-muted small">
+            登入會員可查詢歷史掃描記錄，並透過分析精準推薦符合其消費習慣與偏好的即期商品，創造專屬購物體驗。
+          </p>
+          <small class="text-muted mt-2"><i class="fas fa-undo me-1"></i> 點擊返回</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+    <div class="d-flex justify-content-center mt-5">
+      <a class="btn btn-outline-success" href="../index.html">回首頁 Back to Home</a>
+    </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="footer py-4">
+    <div class="container">
+        <div class="text-center">
+            Copyright © A13 專題小組 2025
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/script.js"></script>
+</body>
+</html>

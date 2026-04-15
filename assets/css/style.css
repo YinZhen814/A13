@@ -1,0 +1,387 @@
+/*!
+ * Start Bootstrap - Agency v6.0.4 (https://startbootstrap.com/theme/agency)
+ * Copyright 2013-2021 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-agency/blob/master/LICENSE)
+ */
+
+/* 核心設定 */
+:root {
+    --bs-primary: #69bf62;
+    --bs-secondary: #212529; /* 深色文字/背景 */
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Roboto Slab', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* 字體設定 */
+.text-primary {
+    color: var(--bs-primary) !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    font-weight: 700;
+}
+
+.subheading {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    text-transform: uppercase;
+}
+
+/* 通用區塊樣式 */
+.page-section {
+    padding: 6rem 0;
+}
+.page-section h2.section-heading,
+.page-section h3.section-subheading {
+    text-align: center;
+}
+.page-section h2.section-heading {
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.page-section h3.section-subheading {
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: italic;
+    font-family: 'Roboto Slab', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    margin-bottom: 4rem;
+    color: #6c757d !important; /* 淺灰色 */
+}
+
+/* 導航列 (Navbar) */
+.navbar-logo {
+    height: 50px;
+    width: auto;
+}
+
+#mainNav {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: var(--bs-secondary); /* 深色背景 */
+}
+#mainNav .navbar-toggler {
+    padding: 0.75rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #fff;
+    border: 0;
+    background-color: var(--bs-primary); /* 按鈕亮黃色 */
+}
+#mainNav .navbar-brand {
+    color: var(--bs-primary);
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    font-weight: 700;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+    font-size: 0.95rem;
+    color: #fff;
+    letter-spacing: 0.0625em;
+}
+#mainNav .navbar-nav .nav-item .nav-link:hover {
+    color: var(--bs-primary);
+}
+
+/* 導航列收縮效果 */
+@media (min-width: 992px) {
+     #mainNav {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        background-color: rgba(33, 37, 41, 0.85);
+    }
+    #mainNav.navbar-shrink {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        background-color: var(--bs-secondary);
+    }
+}
+
+/* 首頁視覺區塊 (Masthead) */
+header.masthead {
+    padding-top: 10.5rem;
+    padding-bottom: 6rem;
+    text-align: center;
+    color: #0a0a0a;
+    position: relative;          /* 新增 */
+    overflow: hidden;            /* 新增 */
+}
+/* 背景裝飾圖層 */
+.masthead-bg-image {
+    position: absolute;
+    inset: 0;
+    background: url("../image/marketbg.png") center/cover no-repeat;
+    opacity: 0.3;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* 文字內容層 */
+header.masthead .container {
+    position: relative;
+    z-index: 2;
+}
+header.masthead .masthead-subheading {
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.5rem;
+    margin-bottom: 25px;
+    font-family: 'Roboto Slab', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+header.masthead .masthead-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 3rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+@media (min-width: 768px) {
+    header.masthead {
+        padding-top: 17rem;
+        padding-bottom: 12.5rem;
+    }
+    header.masthead .masthead-subheading {
+        font-size: 2.25rem;
+        line-height: 2.25rem;
+        margin-bottom: 30px;
+    }
+    header.masthead .masthead-heading {
+        font-size: 4.5rem;
+        line-height: 4.5rem;
+        margin-bottom: 50px;
+    }
+}
+
+/* 按鈕樣式 */
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    color: var(--bs-secondary);
+}
+.btn-primary:hover {
+    background-color: #f7da67;
+    border-color: #f7da67;
+}
+.btn-xl {
+    padding: 1.25rem 2.5rem;
+    font-size: 1.125rem;
+}
+
+/* 專題特色 (Features) 區塊 (取代 Portfolio) */
+.portfolio-item {
+    max-width: 25rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 專題貢獻 (Contribution) 區塊 (取代 About/Timeline) */
+.timeline {
+    position: relative;
+    padding: 0;
+    list-style: none;
+}
+.timeline:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 40px;
+    width: 2px;
+    margin-left: -1.5px;
+    background-color: #e9ecef;
+}
+.timeline > li {
+    margin-bottom: 100px;
+    position: relative;
+    min-height: 100px;
+}
+.timeline > li:last-child {
+    margin-bottom: 0;
+}
+.timeline > li .timeline-panel {
+    float: right;
+    width: 100%;
+    padding: 0 20px 0 100px;
+    text-align: left;
+}
+.timeline > li.timeline-inverted .timeline-panel {
+    float: right;
+    padding: 0 20px 0 100px;
+}
+
+.timeline > li .timeline-image {
+    position: absolute;
+    z-index: 100;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    margin-left: 0;
+    text-align: center;
+    color: white;
+    border: 7px solid #e9ecef;
+    border-radius: 100%;
+    background-color: var(--bs-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.timeline > li .timeline-image h4 {
+    font-size: 10px;
+    line-height: 14px;
+    margin-top: 12px;
+}
+
+@media (min-width: 768px) {
+    .timeline:before {
+        left: 50%;
+    }
+    .timeline > li {
+        min-height: 150px;
+    }
+    .timeline > li .timeline-panel {
+        float: left;
+        width: 41%;
+        padding: 0 20px 20px 30px;
+        text-align: right;
+    }
+    .timeline > li .timeline-image {
+        left: 50%;
+        width: 100px;
+        height: 100px;
+        margin-left: -50px;
+    }
+    .timeline > li .timeline-image h4 {
+        font-size: 13px;
+        line-height: 18px;
+        margin-top: 16px;
+    }
+    .timeline > li.timeline-inverted .timeline-panel {
+        float: right;
+        padding: 0 30px 20px 20px;
+        text-align: left;
+    }
+}
+
+/* =====================
+   Footer
+===================== */
+.footer {
+    background-color: #212529; /* 深色背景 */
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: var(--bs-primary);
+}
+
+/* =====================
+   Social Buttons
+===================== */
+.btn-social {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-size: 1rem;
+}
+
+.btn-social i {
+    line-height: 1;
+}
+
+/* ==========================
+   Team Section
+========================== */
+.team-member {
+    position: relative;
+    text-align: center;
+}
+
+.team-member img {
+    border-radius: 50%;
+    border: 5px solid var(--bs-primary);
+    object-fit: cover;
+}
+
+.team-member h4 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.team-member p.text-muted {
+    margin-bottom: 15px;
+    font-style: italic;
+    color: #6c757d;
+}
+
+.team-member .card {
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+}
+
+.team-member .card-body {
+    padding: 1rem;
+}
+
+.team-member .card-text {
+    text-align: left;
+}
+
+
+
+/* 共用：圖片框樣式（統一外觀） */
+.img-frame{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+  padding: 10px;
+  border-radius: 14px;
+  background: rgba(105,191,98,.08);
+  border: 1px solid rgba(105,191,98,.20);
+}
+
+/* 共用：圖片本體（不裁切，完整顯示） */
+.img-frame img{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: contain;
+  background: #fff;
+}
+
+/* UI截圖：加上 ui-shot（9:19.5） */
+.img-frame.ui-shot{
+  aspect-ratio: 9 / 19.5;
+}
+
+/* 架構圖/資料表/ERD：加上 diagram（16:9） */
+.img-frame.diagram{
+  aspect-ratio: 16 / 9;
+}
+
+
+
+.system-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.system-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25) !important;
+}

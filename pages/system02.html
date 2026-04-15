@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="節能減碳之即期食品動態 AI 定價系統專題網站" />
+  <title>碳即</title>
+  <link rel="icon" type="image/png" href="../assets/image/logo-removebg-preview.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" />
+  <link href="../assets/css/style.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+
+  <style>
+    .timeline-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    .timeline-container::before {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background-color: #28a745;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+      border-radius: 2px;
+    }
+    
+    .timeline-item {
+      padding-left: 40px;
+      padding-right: 40px;
+      position: relative;
+      margin-bottom: 60px;
+    }
+    
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .timeline-icon {
+      width: 60px;
+      height: 60px;
+      z-index: 1;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    
+    
+    .timeline-item:nth-child(odd) {
+      flex-direction: row;
+    }
+    
+    .timeline-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    
+    
+    .accordion-button {
+      font-weight: 600;
+      background-color: #f8f9fa !important;
+      border-radius: 8px !important;
+    }
+    
+    .accordion-button:not(.collapsed) {
+      background-color: #e6f4ea !important;
+      color: #28a745;
+    }
+    
+    
+    .tech-card {
+      transition: all 0.4s ease;
+    }
+    
+    .tech-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+    }
+  </style>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="../index.html">
+      <img src="../assets/image/logo2.png" alt="A13 Logo" class="navbar-logo me-2">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
+      Menu <i class="fas fa-bars ms-1"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ms-auto py-4 py-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="systemDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            系統介紹
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="systemDropdown">
+            <li><a class="dropdown-item" href="system01.html">系統介面</a></li>
+            <li><a class="dropdown-item" href="system02.html">核心技術</a></li>
+            <li><a class="dropdown-item" href="system03.html">系統應用階段</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Content -->
+<section class="page-section system-hero pt-5 mt-5">
+  <div class="container">
+
+    <div class="text-center mb-5 system-title">
+      <h1 class="mb-2">核心技術</h1>
+      <div class="text-muted">Core Technologies</div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="d-flex justify-content-center gap-2 mb-4 flex-wrap system-tabs">
+      <a class="btn btn-outline-success btn-sm" href="system01.html">系統介面</a>
+      <a class="btn btn-success btn-sm" href="system02.html">核心技術</a>
+      <a class="btn btn-outline-success btn-sm" href="system03.html">系統應用階段</a>
+    </div>
+
+    <div class="row g-4">
+      <!-- Tech 1 & Tech 2 Side by Side -->
+      <div class="row g-5 justify-content-center">
+        <!-- Tech 1: 系統架構 -->
+        <div class="col-lg-6">
+          <div class="card tech-card shadow-sm h-100">
+            <div class="card-body text-center">
+              <div class="step-pill mb-3">Tech 1</div>
+              <h5 class="card-title mb-1">系統架構</h5>
+              <div class="text-muted small mb-4">System Architecture</div>
+
+              <div class="tech-img mb-4">
+                <img src="../assets/image/tech_arch.png" alt="系統架構圖" class="img-fluid rounded shadow-sm" data-bs-toggle="modal" data-bs-target="#archModal">
+                <div class="tech-overlay">
+                  <i class="fas fa-search-plus fa-3x text-white"></i>
+                </div>
+              </div>
+
+              <p class="text-muted small">
+                前端使用 Flutter 提供流暢跨平台體驗，後端以 Flask 處理 OCR 與 AI 推論，<br>
+                資料庫採用 MySQL 儲存會員、商品與歷史紀錄，實現完整的前後端分離架構。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tech 2: ER Model -->
+        <div class="col-lg-6">
+          <div class="card tech-card shadow-sm h-100">
+            <div class="card-body text-center">
+              <div class="step-pill mb-3">Tech 2</div>
+              <h5 class="card-title mb-1">資料庫設計與 ER Model</h5>
+              <div class="text-muted small mb-4">Entity Relationship Model</div>
+
+              <div class="tech-img mb-4">
+                <img src="../assets/image/tech_model.png" alt="ER Model（實體關係圖）" class="img-fluid rounded shadow-sm" data-bs-toggle="modal" data-bs-target="#erModal">
+                <div class="tech-overlay">
+                  <i class="fas fa-search-plus fa-3x text-white"></i>
+                </div>
+              </div>
+
+              <p class="text-muted small">
+                透過實體關係圖（ER Model）規範會員、商品、歷史紀錄等資料表結構與關聯，<br>
+                確保後端查詢效率與推薦邏輯的一致性，提升系統可維護性與擴展性。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- 系統架構 -->
+<div class="row mt-5">
+  <div class="col-12">
+    <h2 class="section-subheading text-center text-muted mb-5">技術內容詳述</h2>
+  </div>
+
+  <!-- Timeline Style Layout -->
+  <div class="col-12">
+    <div class="timeline-container position-relative">
+
+      <!-- OCR Module -->
+      <div class="timeline-item mb-5 d-flex align-items-start">
+        <div class="timeline-icon bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-4 flex-shrink-0">
+          <i class="fas fa-camera fa-2x"></i>
+        </div>
+        <div class="timeline-content card shadow-sm flex-fill tech-card">
+          <div class="card-body">
+            <h5 class="card-title text-success">
+              <span class="badge bg-success me-2">一</span>影像辨識與數據採集（OCR 模組）
+            </h5>
+
+            <!-- Accordion Inside -->
+            <div class="accordion mt-3" id="ocrAccordion">
+              <div class="accordion-item border-0">
+                <h2 class="accordion-header" id="ocrHeadingOne">
+                  <button class="accordion-button collapsed bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#ocrCollapseOne">
+                    <strong>1. 技術實現</strong>
+                  </button>
+                </h2>
+                <div id="ocrCollapseOne" class="accordion-collapse collapse" aria-labelledby="ocrHeadingOne">
+                  <div class="accordion-body small">
+                    採用 PaddleOCR 框架，整合至 Python Flask 後端服務。此模組負責對使用者掃描的商品圖片進行特徵文字擷取。
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item border-0">
+                <h2 class="accordion-header" id="ocrHeadingTwo">
+                  <button class="accordion-button collapsed bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#ocrCollapseTwo">
+                    <strong>2. 關鍵目標</strong>
+                  </button>
+                </h2>
+                <div id="ocrCollapseTwo" class="accordion-collapse collapse" aria-labelledby="ocrHeadingTwo">
+                  <div class="accordion-body small">
+                    <ul class="mb-0">
+                      <li>即時效期辨識：準確抓取商品標籤上的「有效期限」數字與格式</li>
+                      <li>商品名稱辨識：透過關鍵字匹配輔助分類，自動將商品劃分至正確的大類別（例如肉類、蔬果類），為機器學習模型的特徵工程提供關鍵輸入</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item border-0">
+                <h2 class="accordion-header" id="ocrHeadingThree">
+                  <button class="accordion-button collapsed bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#ocrCollapseThree">
+                    <strong>3. 實作效益</strong>
+                  </button>
+                </h2>
+                <div id="ocrCollapseThree" class="accordion-collapse collapse" aria-labelledby="ocrHeadingThree">
+                  <div class="accordion-body small">
+                    將核心數據採集的流程從人工輸入轉換為自動化掃描，大幅縮短消費者的操作時間，並確保後續 AI 模型的計算基礎數據是即時且精準的。
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Machine Learning Model -->
+      <div class="timeline-item mb-5 d-flex align-items-start flex-row-reverse">
+        <div class="timeline-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center ms-4 flex-shrink-0">
+          <i class="fas fa-brain fa-2x"></i>
+        </div>
+        <div class="timeline-content card shadow-sm flex-fill tech-card">
+          <div class="card-body">
+            <h5 class="card-title text-primary">
+              <span class="badge bg-primary me-2">二</span>機器學習與動態定價模型
+            </h5>
+            <p class="small text-muted mb-3">
+              本系統的核心價值在於利用多維度數據訓練的隨機森林迴歸模型，輸出具有科學依據的價格建議。
+            </p>
+
+            <!-- Accordion Inside -->
+            <div class="accordion mt-3" id="mlAccordion">
+              <div class="accordion-item border-0">
+                <h2 class="accordion-header" id="mlHeadingOne">
+                  <button class="accordion-button collapsed bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#mlCollapseOne">
+                    <strong>1. 核心演算法：隨機森林迴歸</strong>
+                  </button>
+                </h2>
+                <div id="mlCollapseOne" class="accordion-collapse collapse" aria-labelledby="mlHeadingOne">
+                  <div class="accordion-body small">
+                    <ul class="mb-0">
+                      <li><strong>集成優勢</strong>：採用 100 棵決策樹的集成策略，利用隨機抽樣機制，降低了單一模型過度擬合的風險，確保模型在不同銷售情境下的穩健性</li>
+                      <li><strong>可重現性</strong>：訓練腳本中使用固定隨機數種子，保障模型每次訓練的結果一致性，有利於持續性維護與性能追蹤</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item border-0">
+                <h2 class="accordion-header" id="mlHeadingTwo">
+                  <button class="accordion-button collapsed bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#mlCollapseTwo">
+                    <strong>2. 多維度特徵工程</strong>
+                  </button>
+                </h2>
+                <div id="mlCollapseTwo" class="accordion-collapse collapse" aria-labelledby="mlHeadingTwo">
+                  <div class="accordion-body small">
+                    模型成功整合了以下複合特徵，以模擬零售市場供需與環境影響：
+                    <ul class="mt-2 mb-0">
+                      <li>時效性特徵：由 OCR 辨識結果計算而得的剩餘保存期限（小時）</li>
+                      <li>環境特徵：當下溫度、人流量與天氣狀況</li>
+                      <li>營運特徵：貨架上庫存量與商品類別</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item border-0">
+                <h2 class="accordion-header" id="mlHeadingThree">
+                  <button class="accordion-button collapsed bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#mlCollapseThree">
+                    <strong>3. 推論與輸出</strong>
+                  </button>
+                </h2>
+                <div id="mlCollapseThree" class="accordion-collapse collapse" aria-labelledby="mlHeadingThree">
+                  <div class="accordion-body small">
+                    透過 Flask API 接收數據後，模型即時推論出在當前情境下的「最佳建議折扣比例」，系統再以此計算並提供「建議合理價格」給予消費者參考。
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    <div class="d-flex justify-content-center mt-5">
+      <a class="btn btn-outline-success" href="../index.html">回首頁 Back to Home</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer py-4">
+    <div class="container">
+        <div class="text-center">
+            Copyright © A13 專題小組 2025
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/script.js"></script>
+</body>
+</html>
